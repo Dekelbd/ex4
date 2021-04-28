@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style-form.css">
+    <script src="js/scripts.js"></script>
+    <meta charset="UTF-8">
+    <title>Dekel Ben-David</title>
+</head>
+<body class="body">
+
+
+<div id="lamp">
+    <div id="turnon">
+        <a href="#turnon" class="lamp"></a>
+        <a href="#turnoff" class="turnoff"></a>
+        <div class="string"></div>
+        <div class="bulb"></div>
+        <div class="light">
+            <div style="background-color: #95c6f2; width: 100px; height: 100px;">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--candle-->
+<div class="wrapper">
+    <div class="candles">
+        <div class="light__wave"></div>
+        <div class="candle1">
+            <div class="candle1__body">
+                <div class="candle1__eyes">
+                    <span class="candle1__eyes-one"></span>
+                    <span class="candle1__eyes-two"></span>
+                </div>
+                <div class="candle1__mouth"></div>
+            </div>
+            <div class="candle1__stick"></div>
+        </div>
+
+        <div class="candle2">
+            <div class="candle2__body">
+                <div class="candle2__eyes">
+                    <div class="candle2__eyes-one"></div>
+                    <div class="candle2__eyes-two"></div>
+                </div>
+            </div>
+            <div class="candle2__stick"></div>
+        </div>
+        <div class="candle2__fire"></div>
+        <div class="sparkles-one"></div>
+        <div class="sparkles-two"></div>
+        <div class="candle__smoke-one">
+
+        </div>
+        <div class="candle__smoke-two">
+
+        </div>
+
+    </div>
+    <div class="floor">
+    </div>
+</div>
+
+
+<!--form-->
+
+
+<form id="form" action="http://localhost/shenkar/exercises/ex4/get_params.php" method="GET" autocomplete="on">
+
+
+    <h1 class="card-header text-center">Join the Software Engineering Department!</h1>
+    <br>
+        <div id="location-all">
+            <div class="col-md-4 offset-4">
+                <label for="exampleInputName1" class="form-label">Full name</label>
+                <input type="text" class="form-control" name="fullName" id="exampleInputName1"
+                       pattern="([a-zA-Z]+\s)+[a-zA-Z]+" aria-describedby="emailHelp">
+                <div id="NameHelp" class="form-text"></div>
+            </div>
+        </div>
+        <br>
+        <div class="col-md-4 offset-4">
+            <label for="InputEmail" class="form-label">Email address</label>
+            <input type="email" class="form-control" name="mail" id="InputEmail" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+<!--        <div id="location-button">-->
+<!--            -->
+<!--        </div>-->
+    <button type="submit" class="btn btn-primary btn-block col-md-4 offset-4 mt-3">Send</button>
+    </form>
+
+    <div id="question">
+        <p id="riddle">Oh no! The candles went out and the form was not sent. <br> Do not worry, if you can solve the riddle the form will definitely arrive safely!<br>
+            So.. Consider the number of credits needed to complete the degree, <br> plus the ASCII (Dec) value of the first letter in each of the following two words: "Software Engineering".
+            <br> GOOD LUCK!</p>
+        <input class="mb-5" type="text" id="answer" placeholder="enter your answer">
+        <i id="bad-answer">Bad answer try again!</i>
+        <button id="send" class="btn btn-outline-success">send</button>
+    </div>
+
+
+    <script>
+
+        document.getElementById("turnon").addEventListener("click", showQuestion);
+        document.getElementById("form").addEventListener("submit", lightCandle, false);
+        document.getElementById("send").addEventListener("click", submitAnswer);
+
+        function submitAnswer() {
+            var answer = document.getElementById("answer").value;
+            if (answer === "312") {
+                document.getElementById("form").submit();
+            } else {
+                document.getElementById("bad-answer").style.display = "block";
+
+            }
+        }
+
+        function showQuestion() {
+            document.getElementById("question").style.display = "flex";
+        }
+
+        function lightCandle(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var el1 = document.getElementsByClassName("candle__smoke-one")[0]
+            var el2 = document.getElementsByClassName("candle__smoke-two")[0]
+            var el3 = document.getElementsByClassName("body")[0]
+            var el4 = document.getElementsByClassName("candle1")[0]
+            var el5 = document.getElementsByClassName("candle2__stick")[0]
+            var el6 = document.getElementsByClassName("candle1__eyes-one")[0]
+            var el7 = document.getElementsByClassName("candle1__eyes-two")[0]
+            var el8 = document.getElementsByClassName("candle1__mouth")[0]
+            var el9 = document.getElementsByClassName("candle2")[0]
+            var el10 = document.getElementsByClassName("candle2__eyes-one")[0]
+            var el11 = document.getElementsByClassName("candle2__eyes-two")[0]
+            var el12 = document.getElementsByClassName("light__wave")[0]
+            var el13 = document.getElementsByClassName("candles")[0]
+            var el14 = document.getElementsByClassName("floor")[0]
+            var el15 = document.getElementById("lamp")
+            var el16 = document.getElementById("form")
+
+
+            el1.style.removeProperty("display")
+            el2.style.removeProperty("display")
+            el1.classList.add("candle__smoke-one-animate")
+            el2.classList.add("candle__smoke-two-animate")
+            el3.classList.add("body-animate")
+            el4.classList.add("candle1-animate")
+            el5.classList.add("candle2__stick-animate")
+            el6.classList.add("candle1__eyes-one-animate")
+            el7.classList.add("candle1__eyes-two-animate")
+            el8.classList.add("candle1__mouth-animate")
+            el9.classList.add("candle2-animate")
+            el10.classList.add("candle2__eyes-one-animate")
+            el11.classList.add("candle2__eyes-two-animate")
+            el12.classList.add("light__wave-animate")
+
+
+            setTimeout(function () {
+                el13.style.display = "none"
+                el14.style.display = "none"
+                el3.classList.remove("body-animate")
+                el3.style.removeProperty("background-color")
+                el3.style.backgroundColor = "black"
+                el15.style.removeProperty("display")
+                el15.style.display = "block"
+                el16.style.display = "none";
+
+            }, 2900)
+
+        }
+
+    </script>
+
+</body>
+</html>

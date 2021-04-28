@@ -1,0 +1,46 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    background: linear-gradient(0deg, #03013e, #042a7e, #0958a2, #08b5ca);
+
+}
+
+#location-all{
+    margin-left: 20px;
+
+}
+
+#location-button{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+#wrapper{
+    width: 700px;
+    margin: 0 auto;
+    background-color: white;
+    margin-top : 35px;
+    margin-bottom: 35px;
+}
+
+#wrapper h1{
+    display: flex;
+    justify-content: center;
+
+}
+
+#check_box_error{
+    color: red;
+    display: none;
+}
+
+#wrapper{
+    border-radius: 20px;
+}
+
+
+

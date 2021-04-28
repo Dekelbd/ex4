@@ -1,0 +1,47 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    color: white;
+}
+
+h2{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    color: #fff;
+
+
+}
+
+img{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+
+}
+
+body {
+    background: linear-gradient(-90deg, #000000, #663d3d, #000000, #663d3d);
+    background-size: 500% 500%;
+    animation: gradient 35s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
